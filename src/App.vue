@@ -1,15 +1,18 @@
 <template>
-  <div id="app theme-default">
-    <!-- <img src="./assets/logo.png"> -->
-    <router-view/>
-  </div>
+	<div>
+		<img src="./assets/logo.png">
+		<router-view/>
+	</div>
 </template>
 
-<script>
-
-
-</script>
 <style lang="scss">
-	
+	html, body {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background:#8ad3ea;
+		height: 100%;
+		width: 100%;
+	}
 </style>
 

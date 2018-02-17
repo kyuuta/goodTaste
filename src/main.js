@@ -2,14 +2,11 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
-
-import 'normalize.css';
-
-// import './config/rem'					// rem转换
-import './config/config'				// fastClick click => touch
+import '^config/config';
 
 Vue.config.productionTip = false
 
-new Vue({
-	router
+window.vueObj = new Vue({
+	router,
+	render: h => h(App)
 }).$mount('#app')

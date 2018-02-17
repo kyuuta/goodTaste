@@ -1,7 +1,15 @@
 <template>
-    <div>
-        hello kyuuta1231231
+    <div class="home">
+        <p>Hello Vue.js!</p>
+        <p>KYUUTA</p>
     </div>
 </template>
-<script>
-</script>
+
+<style lang="scss" scoped>
+    .home {
+        > p {
+            text-align: center;
+            color: #fff;
+        }
+    }
+</style>

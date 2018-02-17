@@ -1,4 +1,5 @@
-import FastClick from 'fastclick';
+import 'normalize.css';					// resetCss
+import FastClick from 'fastclick';		// moblieEvent
 
 // click => touch
 ((doc)=>{
