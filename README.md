@@ -1,6 +1,15 @@
-# goodtaste
+<p align="center">
+    goodTaste
+</p>
+<p align="center">
+	<a href="https://github.com/vuejs/vue">
+		<img src="https://img.shields.io/badge/vue-2.5.2-brightgreen.svg" alt="vue">
+	</a>
+</p>
 
-> A Vue.js project ttt
+## 简介
+
+`goodTaste` 正在制作中... 一个兴趣使然的小项目~ 
 
 ## Build Setup
 
