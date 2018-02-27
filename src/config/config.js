@@ -10,7 +10,6 @@ import FastClick from 'fastclick';		// moblieEvent
 	}
 })(document);
 
-
 // px => rem
 ((doc, win) => {
 	const docEl = doc.documentElement,
@@ -18,7 +17,7 @@ import FastClick from 'fastclick';		// moblieEvent
 		  recalc = () => {
 			  const clientWidth = docEl.clientWidth;
 			  if(!clientWidth) return;
-			  docEl.style.fontSize = 20 * (clientWidth / 320) + 'px';
+			  docEl.style.fontSize = 16 * (clientWidth / 320) + 'px';
 		  };
 		     
 	if(!doc.addEventListener) return;
@@ -26,4 +25,3 @@ import FastClick from 'fastclick';		// moblieEvent
 	win.addEventListener(resizeEvt, recalc, false);
 	doc.addEventListener('DOMContentLoaded', recalc, false);
 })(document, window);
-
