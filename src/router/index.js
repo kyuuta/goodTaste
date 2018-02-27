@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router';
 
+const _import = require('./_import_' + process.env.NODE_ENV);
 
-const advertisement = () => import("%/advertisement"); 			// 广告
-const NotFound = () => import('%/notFound');				    // 404
+const advertisement = _import("advertisement/advertisement"); 			// 广告
+const NotFound = _import('notFound/notFound');				    // 404
 
 
 import routesHome from './home';
