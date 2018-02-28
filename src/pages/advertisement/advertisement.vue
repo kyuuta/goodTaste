@@ -1,6 +1,7 @@
 <template>
     <div class="advertisement">
         <div class="skip-btn" @click="skip">跳过({{ skipTime }}秒)</div>
+        <div class="author">created by KYUUTA.</div>
     </div>
 </template>
 
@@ -17,13 +18,12 @@
             }
         },
         mounted() {
-            this.skipCountDown();
+            // this.skipCountDown();
         },
         methods: {
             skipCountDown() {
                 let timer = setInterval(()=>{
                     if(this.skipTime > 1) {
-                        console.log("test");
                         this.skipTime--;
                     } else {
                         clearInterval(timer);
