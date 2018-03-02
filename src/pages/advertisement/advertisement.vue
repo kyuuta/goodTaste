@@ -10,6 +10,7 @@
      *  昨天熬夜3点多有点困Zzz..
      *  created by kyuuta on 2018-02-27 11:21:33
      */
+
     export default {
         name: 'advertisement',
         data() {
@@ -18,6 +19,7 @@
             }
         },
         mounted() {
+            this.$loadingPrompt.open();
             // this.skipCountDown();
         },
         methods: {

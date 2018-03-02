@@ -40,6 +40,7 @@ module.exports = {
       '%': resolve('src/pages'),
       '*': resolve('src/styles'),
       '*pages': resolve('src/styles/pages'),
+      '@': resolve('src/components'),
       '^images': resolve('src/assets/images'),
       'images': resolve('src/assets/images')
     }
