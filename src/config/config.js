@@ -1,27 +1,32 @@
 import 'normalize.css';					// resetCss
 import FastClick from 'fastclick';		// moblieEvent
+import network from './network';		// http
 
-// click => touch
-((doc)=>{
-	if('addEventListener' in doc) {
-		doc.addEventListener('DOMContentLoaded', ()=>{
-			FastClick.attach(document.body);
-		}, false);
+window.GLOBAL = {
+	network,
+	init(){
+		// toMoblieEvent
+		if('addEventListener' in document) {
+			document.addEventListener('DOMContentLoaded', ()=>{
+				FastClick.attach(document.body);
+			}, false);
+		}
+
+		// px => rem
+		const docEl = document.documentElement,
+			resizeEvt = 'orientationchange' in Window ? 'orientationchange' : 'resize',
+			recalc = () => {
+				const clientWidth = docEl.clientWidth;
+				if(!clientWidth) return;
+				docEl.style.fontSize = 16 * (clientWidth / 320) + 'px';
+			};
+				
+		if(!document.addEventListener) return;
+
+		window.addEventListener(resizeEvt, recalc, false);
+		document.addEventListener('DOMContentLoaded', recalc, false);
+
 	}
-})(document);
+}
 
-// px => rem
-((doc, win) => {
-	const docEl = doc.documentElement,
-		  resizeEvt = 'orientationchange' in Window ? 'orientationchange' : 'resize',
-		  recalc = () => {
-			  const clientWidth = docEl.clientWidth;
-			  if(!clientWidth) return;
-			  docEl.style.fontSize = 16 * (clientWidth / 320) + 'px';
-		  };
-		     
-	if(!doc.addEventListener) return;
-
-	win.addEventListener(resizeEvt, recalc, false);
-	doc.addEventListener('DOMContentLoaded', recalc, false);
-})(document, window);
+GLOBAL.init();
