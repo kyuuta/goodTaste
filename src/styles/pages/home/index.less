@@ -1,0 +1,130 @@
+@import '~*/mixin.less';
+
+.home {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100%;
+    width: 100%;
+
+    .menu-view {
+        height: 100%;
+        width: 100%;
+        &-main {
+            height: 100%;
+            width: 100%;
+            // padding-bottom: 50/@rem;
+            background: #fff;
+            .menuview-main {
+                display: flex;
+                height: 100%;
+                // width:100%;
+                .menu-category {
+                    overflow-y: auto;
+                    flex: 0 0 75/@rem;                    
+                    color: #666;
+                    background: #f8f8f8;
+                    .item {
+                        font-size: 10/@rem;
+                        padding: 14/@rem 10/@rem;
+                        .border-line;
+                    }
+                    .active {
+                        color: #333;
+                        background: #fff;
+                    }
+                }
+                .container {
+                    position: relative;
+                    flex: 1;
+                    display: block;
+                    // background:skyblue;
+                    .scroller {
+                        overflow-y: auto;
+                        height: 100%;
+                        .menu {
+                            margin: 0;
+                            padding: 0;
+                            .category-title {
+                                margin-left: 6/@rem;
+                                padding: 6/@rem 0;
+                                .border-line;
+                                .category-name {
+                                    color: #666;
+                                    font-size: 12/@rem;
+                                }
+                                .category-desc {
+                                    color: #999;
+                                    font-size: 10/@rem;
+                                }
+                            }
+                            dd {
+                                width: 100%;
+                                min-height: 80/@rem;
+                                padding-left: 8/@rem;
+                                .foods {
+                                    display: flex;
+                                    min-height: 80/@rem;
+                                    padding: 8/@rem 10/@rem 8/@rem 0;
+                                    &-pic {
+                                        vertical-align: top;
+                                        width: 68/@rem;
+                                        height: 68/@rem;
+                                        margin-right: 8/@rem;
+                                        background: orange;
+                                        img {
+                                            width: 100%;
+                                            max-width: 100%;
+                                        }
+                                    }
+                                    &-info {
+                                        position: relative;
+                                        flex: 1;
+                                        box-sizing: inherit;
+                                        padding-bottom: 20/@rem;
+                                        &-name {
+                                            font-weight: 700;
+                                            line-height: 1.2;
+                                            color: #333;
+                                            font-size: 14/@rem;
+                                        }
+                                        &-desc {
+                                            overflow: hidden;
+                                            white-space: nowrap;
+                                            text-overflow: ellipsis;
+                                            width: 140/@rem;
+                                            font-size: 8/@rem;
+                                            color: #999;
+                                            margin: 4/@rem 0;
+                                        }
+                                        &-sales {
+                                            font-size: 9/@rem;
+                                            margin: 4/@rem 0;
+                                            color: #666;
+                                        }
+                                        &-price {
+                                            position: absolute;
+                                            bottom: 0;
+                                            display: flex;
+                                            align-items: baseline;
+                                            font-size: 14/@rem;
+                                            color: #00a1d6;
+                                            &:before {
+                                                font-weight: 400;
+                                                content: '\A5';
+                                                font-size: 6/@rem;
+                                                margin-right: 2/@rem;
+                                                display: inline-block;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+

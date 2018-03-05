@@ -22,3 +22,31 @@
     text-align: center;
     line-height: @line-height;
 } 
+
+
+.border-line() {
+    position: relative;
+    &:after {
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        width: 100%;
+        border-bottom: 1px solid #eee;
+        content: '';
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+        &:after {
+            -webkit-transform: scaleY(0.5);
+            transform: scaleY(0.5);
+        }
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio: 3) {
+        &:after {
+            -webkit-transform: scaleY(0.33);
+            transform: scaleY(0.33);
+        }
+    }
+}
+

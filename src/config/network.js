@@ -22,6 +22,9 @@ export default {
             timeout: void 0
         }, options);
 
+        axios.defaults.withCredentials = true;
+
+		axios.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8';
         const axiosInterceptors = axios.interceptors.response.use(response => {
             return response;
         }, err => {
