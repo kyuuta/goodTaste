@@ -4,11 +4,11 @@ import router from './router'
 import store from './store'
 import '^config/config';
 
-
 import loadingPrompt from '@/loadingPrompt/index';
 
 
 Vue.$loadingPrompt = Vue.prototype.$loadingPrompt = loadingPrompt;
+Vue.prototype.$http = GLOBAL.network.request;
 
 
 Vue.config.productionTip = false

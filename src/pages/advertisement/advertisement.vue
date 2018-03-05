@@ -19,8 +19,7 @@
             }
         },
         mounted() {
-            this.$loadingPrompt.open();
-            // this.skipCountDown();
+            this.skipCountDown();
         },
         methods: {
             skipCountDown() {
