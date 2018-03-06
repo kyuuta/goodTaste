@@ -21,6 +21,7 @@
                     <strong class="foods-info-price">
                         <span>23.33</span>
                     </strong>
+                    <kyBuyCart class="buy-cart" />
                 </section>
             </div>
         </dd>
@@ -28,6 +29,8 @@
 </template>
 
 <script>
+    import kyBuyCart from '@/common/buyCart';
+
     export default {
         name: 'kyMenu',
         data() {
@@ -43,90 +46,10 @@
         },
         methods: {
             
-        }
+        },
+        components: { kyBuyCart }
     }
 </script>
 
-<style lang="less" scoped>
-    @import '~*/mixin.less';
-    .menu {
-        margin: 0;
-        padding: 0;
-        .category-title {
-            margin-left: 6/@rem;
-            padding: 6/@rem 0;
-            .border-line;
-            .category-name {
-                color: #666;
-                font-size: 12/@rem;
-            }
-            .category-desc {
-                color: #999;
-                font-size: 10/@rem;
-            }
-        }
-        dd {
-            width: 100%;
-            min-height: 80/@rem;
-            padding-left: 8/@rem;
-            .foods {
-                display: flex;
-                min-height: 80/@rem;
-                padding: 8/@rem 10/@rem 8/@rem 0;
-                &-pic {
-                    vertical-align: top;
-                    width: 68/@rem;
-                    height: 68/@rem;
-                    margin-right: 8/@rem;
-                    img {
-                        display: inline-block;
-                        width: 100%;
-                        height: 100%;
-                        max-width: 100%;
-                    }
-                }
-                &-info {
-                    position: relative;
-                    flex: 1;
-                    box-sizing: inherit;
-                    padding-bottom: 20/@rem;
-                    &-name {
-                        font-weight: 700;
-                        line-height: 1.2;
-                        color: #333;
-                        font-size: 14/@rem;
-                    }
-                    &-desc {
-                        overflow: hidden;
-                        white-space: nowrap;
-                        text-overflow: ellipsis;
-                        width: 140/@rem;
-                        font-size: 8/@rem;
-                        color: #999;
-                        margin: 4/@rem 0;
-                    }
-                    &-sales {
-                        font-size: 9/@rem;
-                        margin: 4/@rem 0;
-                        color: #666;
-                    }
-                    &-price {
-                        position: absolute;
-                        bottom: 0;
-                        display: flex;
-                        align-items: baseline;
-                        font-size: 14/@rem;
-                        color: #00a1d6;
-                        &:before {
-                            font-weight: 400;
-                            content: '\A5';
-                            font-size: 6/@rem;
-                            margin-right: 2/@rem;
-                            display: inline-block;
-                        }
-                    }
-                }
-            }
-        }
-    }
-</style>
+<style lang="less" src="*pages/home/menu.less" scoped/>
+
