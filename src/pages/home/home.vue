@@ -10,137 +10,32 @@
                             v-for="(category, index) in menuList"
                             :key="index"
                             @click="changeCategory(category.category_id)">
-                                {{ category.description }}
+                                {{ category.name }}
                         </li>
                     </ul>
                     <section class="container">
                         <div class="scroller">
-                            <dl class="menu">
-                                <dt class="category-title">
-                                    <strong class="category-name">Hot</strong>
-                                    <span class="category-desc">is Not Hot...</span>
-                                </dt>
-                                <dd>
-                                    <div class="foods">
-                                        <div class="foods-pic">
-                                            <img src="111" alt="111">
-                                        </div>
-                                        <section class="foods-info">
-                                            <p class="foods-info-name">First Product</p>
-                                            <p class="foods-info-desc">!songzongzhendeshuai === false....<p>
-                                            <p class="foods-info-sales">
-                                                <span>月售233份</span>
-                                                <span>好评率23.333%</span>
-                                            </p>
-                                            <strong class="foods-info-price">
-                                                <span>23.33</span>
-                                            </strong>
-                                        </section>
-                                    </div>
-                                </dd>
-                                <dd>
-                                    <div class="foods">
-                                        <div class="foods-pic">
-                                            <img src="111" alt="111">
-                                        </div>
-                                        <section class="foods-info">
-                                            <p class="foods-info-name">First Product</p>
-                                            <strong class="foods-info-price">
-                                                <span>23.33</span>
-                                            </strong>
-                                        </section>
-                                    </div>
-                                </dd>
-                                <dd>
-                                    <div class="foods">
-                                        <div class="foods-pic">
-                                            <img src="111" alt="111">
-                                        </div>
-                                        <section class="foods-info">
-                                            <p class="foods-info-name">First Product</p>
-                                            <!-- <p class="foods-info-desc">!songzongzhendeshuai === false....<p> -->
-                                            <p class="foods-info-sales">
-                                                <span>月售233份</span>
-                                                <span>好评率23.333%</span>
-                                            </p>
-                                            <strong class="foods-info-price">
-                                                <span>23.33</span>
-                                            </strong>
-                                        </section>
-                                    </div>
-                                </dd>
-                            </dl>
-                            <dl class="menu">
-                                <dt class="category-title">
-                                    <strong class="category-name">Hot</strong>
-                                    <span class="category-desc">is Not Hot...</span>
-                                </dt>
-                                <dd>
-                                    <div class="foods">
-                                        <div class="foods-pic">
-                                            <img src="111" alt="111">
-                                        </div>
-                                        <section class="foods-info">
-                                            <p class="foods-info-name">First Product</p>
-                                            <p class="foods-info-desc">!songzongzhendeshuai === false....<p>
-                                            <p class="foods-info-sales">
-                                                <span>月售233份</span>
-                                                <span>好评率23.333%</span>
-                                            </p>
-                                            <strong class="foods-info-price">
-                                                <span>23.33</span>
-                                            </strong>
-                                        </section>
-                                    </div>
-                                </dd>
-                                <dd>
-                                    <div class="foods">
-                                        <div class="foods-pic">
-                                            <img src="111" alt="111">
-                                        </div>
-                                        <section class="foods-info">
-                                            <p class="foods-info-name">First Product</p>
-                                            <strong class="foods-info-price">
-                                                <span>23.33</span>
-                                            </strong>
-                                        </section>
-                                    </div>
-                                </dd>
-                                <dd>
-                                    <div class="foods">
-                                        <div class="foods-pic">
-                                            <img src="111" alt="111">
-                                        </div>
-                                        <section class="foods-info">
-                                            <p class="foods-info-name">First Product</p>
-                                            <!-- <p class="foods-info-desc">!songzongzhendeshuai === false....<p> -->
-                                            <p class="foods-info-sales">
-                                                <span>月售233份</span>
-                                                <span>好评率23.333%</span>
-                                            </p>
-                                            <strong class="foods-info-price">
-                                                <span>23.33</span>
-                                            </strong>
-                                        </section>
-                                    </div>
-                                </dd>
-                            </dl>
+                            <kyMenu v-for="(menu, index) in menuList"
+                                    :key="index"
+                                    :menuData="menu" />
                         </div>
                     </section>
                 </main>
+                <kyCart></kyCart>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-    import axios from 'axios';
+    import kyMenu from './children/menu';
+    import kyCart from './children/cart';
 
     export default {
         data() {
             return {
-                menuList: [],           // 菜单数据
-                activeCategoryId: null    // 选中category
+                menuList: [],                   // 菜单数据
+                activeCategoryId: null          // 选中category
             }
         },
         mounted(){
@@ -158,6 +53,10 @@
             changeCategory(id) {
                 this.activeCategoryId = id;
             }
+        },
+        components: { 
+            kyMenu,
+            kyCart 
         }
     }
 </script>
