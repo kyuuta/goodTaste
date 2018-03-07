@@ -17,6 +17,8 @@
 	}
 </script>
 
+<style src="*/reset.css"></style>
+<style src="*/iconfont.css"></style>
 <style lang="less">
 	@import "~*/mixin.less";
 

@@ -1,8 +1,8 @@
 <template>
     <section class="ky-buycart">
-        <span class="minus-btn">-</span>
-        <span>0</span>
-        <span class="add-btn">+</span>
+        <i class="icon-minus"></i>
+        <span class="count">1</span>
+        <i class="icon-add"></i>
     </section>
 </template>
 

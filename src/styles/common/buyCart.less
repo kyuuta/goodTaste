@@ -1,7 +1,35 @@
 @import '~*/mixin.less';
 
+@color1: #2395ff;
+@color2: #00a1d6;
+@color3: #00b8fe;
+@color4: #da5e2e;
+@color6: #d74535;
+@color5: #e79c37;
+
 .ky-buycart {
-    width: 30/@rem;
-    height: 14/@rem;
-    background: red;
+    height: 15/@rem;
+    line-height: 15/@rem;
+    white-space: nowrap;
+    .icon-minus,
+    .icon-add {
+        width: 15/@rem;
+        height: 15/@rem;
+        font-size: 12/@rem;
+        border-radius: 50%;
+    }
+    .icon-minus {
+        color: #d74535;
+        box-shadow: inset 0px 0px 1px 0px #d74535;
+    }
+    .icon-add {
+        color: #fff;
+        background: #d74535;
+    }
+    .count {
+        display: inline-block;
+        min-width: 15/@rem;
+        text-align: center;
+        color: #666;
+    }
 }

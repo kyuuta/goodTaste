@@ -1,0 +1,5 @@
+i { /* 所有i标签均用于图标 */
+    display: inline-block;
+    text-align: center;
+    font-style: normal;
+}

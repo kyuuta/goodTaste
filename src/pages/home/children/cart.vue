@@ -16,7 +16,9 @@
     export default {
         name: 'kyCart',
         data() {
-            
+            return {
+                
+            }
         }
     }
 </script>
