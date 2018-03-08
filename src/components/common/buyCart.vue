@@ -1,7 +1,7 @@
 <template>
     <section class="ky-buycart">
         <i class="icon-minus" @click="reduceToCart"></i>
-        <span class="count"></span>
+        <span class="count">{{ foodNum }}</span>
         <i class="icon-add" @click="addToCart"></i>
     </section>
 </template>
@@ -19,12 +19,20 @@
         },
         computed: {
             ...mapState({
-                cartList: state => state.home.cartList
-            })
+                cartList: state => state.cartList
+            }),
+            foodNum() {
+                let num = 0;
+                this.cartList.forEach(item => {
+                    if(item.id === this.food.id) {
+                        num += item.num;
+                    }
+                })
+                return num;
+            }
         },
         data() {
             return {
-                
             }
         },
         methods: {

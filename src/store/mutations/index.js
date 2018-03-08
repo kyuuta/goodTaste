@@ -12,7 +12,7 @@ import {
 
 export default {
     [ADD_CART](state, food) {
-        const cartList = state.home.cartList;
+        const cartList = state.cartList;
         let hasFood = cartList.some(item => item.id === food.id);
 
         if(!cartList.length || !hasFood) {
@@ -30,7 +30,7 @@ export default {
         setStorage('buyCart', state.cartList);
     },
     [REDUCE_CART](state, foodId) {
-        const cartList = state.home.cartList;
+        const cartList = state.cartList;
         
         cartList.forEach((food, index) => {
             if(food.id == foodId) {
