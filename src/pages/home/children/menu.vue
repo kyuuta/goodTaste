@@ -21,7 +21,8 @@
                     <strong class="foods-info-price">
                         <span>23.33</span>
                     </strong>
-                    <kyBuyCart class="buy-cart" />
+                    <kyBuyCart class="buy-cart" 
+                               :food="food"/>
                 </section>
             </div>
         </dd>
