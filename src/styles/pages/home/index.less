@@ -24,9 +24,24 @@
                     color: #666;
                     background: #f8f8f8;
                     .item {
+                        position: relative;
                         font-size: 10/@rem;
                         padding: 14/@rem 10/@rem;
                         .border-line;
+                        .num-tag {
+                            position: absolute;
+                            right: 5%;
+                            top: 5%;
+                            min-width: 13/@rem;
+                            height: 10/@rem;
+                            padding: 0 3/@rem;                            
+                            border-radius: .5rem;
+                            font-size: 8/@rem;
+                            background: #da5e2e;
+                            text-align: center;
+                            line-height: 10/@rem;
+                            color: #fff;
+                        }
                     }
                     .active {
                         color: #333;

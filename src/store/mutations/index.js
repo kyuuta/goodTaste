@@ -37,6 +37,7 @@ export default {
                 if(food.num > 1) {
                     food.num--;
                 }else {
+                    food.num--;
                     cartList.splice(index, 1);
                 }
             }

@@ -12,7 +12,7 @@
     </div>
 </template>
 
-<script>
+<script>    
     export default {
         name: 'kyCart',
         data() {
