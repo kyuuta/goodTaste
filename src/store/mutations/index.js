@@ -12,11 +12,11 @@ import {
 
 export default {
     [ADD_CART](state, food) {
-        const cartList = state.cartList;
+        const cartList = state.home.cartList;
         let hasFood = cartList.some(item => item.id === food.id);
 
         if(!cartList.length || !hasFood) {
-            food.num = 1;
+            vueObj.$set(food, 'num', 1);
             cartList.push(food)
         }else {
             cartList.forEach(item => {
@@ -26,11 +26,11 @@ export default {
             })
         }
 
-        state.cartList = [...cartList];
-        setStorage('buyCart', state.cartList);
+        state.home.cartList = [...cartList];
+        setStorage('buyCart', state.home.cartList);
     },
     [REDUCE_CART](state, foodId) {
-        const cartList = state.cartList;
+        const cartList = state.home.cartList;
         
         cartList.forEach((food, index) => {
             if(food.id == foodId) {
@@ -42,7 +42,7 @@ export default {
             }
         })
 
-        state.cartList = [...cartList];
-        setStorage('buyCart', state.cartList);
+        state.home.cartList = [...cartList];
+        setStorage('buyCart', state.home.cartList);
     }
 }

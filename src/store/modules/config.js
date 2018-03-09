@@ -1,5 +1,5 @@
 const state = {
-    keepAlivePage: ['test'],
+    keepAlivePage: [],
     scrollPosition: {
         x: 0,
         y: 0

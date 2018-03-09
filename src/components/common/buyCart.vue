@@ -1,8 +1,21 @@
 <template>
     <section class="ky-buycart">
-        <i class="icon-minus" @click="reduceToCart"></i>
-        <span class="count">{{ foodNum }}</span>
-        <i class="icon-add" @click="addToCart"></i>
+
+        <transition name="showReduce">
+            <span v-if="foodNum"
+                  class="minus-btn" 
+                  @click="reduceToCart">
+                <i class="icon-minus"></i> 
+            </span>
+        </transition>
+        <transition name="fade">
+            <span v-if="foodNum" 
+                  class="count">{{ foodNum }}</span>
+        </transition>
+        <span class="add-btn" @click="addToCart">
+            <i class="icon-add"></i> 
+        </span>
+
     </section>
 </template>
 
@@ -19,7 +32,7 @@
         },
         computed: {
             ...mapState({
-                cartList: state => state.cartList
+                cartList: state => state.home.cartList
             }),
             foodNum() {
                 let num = 0;

@@ -11,18 +11,25 @@
     height: 15/@rem;
     line-height: 15/@rem;
     white-space: nowrap;
-    .icon-minus,
-    .icon-add {
+    user-select: none;
+    .minus-btn,
+    .add-btn {
+        display: inline-block;
         width: 15/@rem;
         height: 15/@rem;
-        font-size: 12/@rem;
+        text-align: center;
+        line-height: 15/@rem;
         border-radius: 50%;
     }
-    .icon-minus {
+    .icon-minus,
+    .icon-add {
+        font-size: 12/@rem;
+    }
+    .minus-btn {
         color: #d74535;
         box-shadow: inset 0px 0px 1px 0px #d74535;
     }
-    .icon-add {
+    .add-btn {
         color: #fff;
         background: #d74535;
     }
@@ -31,5 +38,19 @@
         min-width: 15/@rem;
         text-align: center;
         color: #666;
+    }
+
+    .showReduce-enter-active, .showReduce-leave-active {
+        transition: all .3s ease-out;
+    }
+    .showReduce-enter, .showReduce-leave-active {
+        opacity: 0;
+        transform: translateX(15/@rem) rotate(360deg);
+    }
+    .fade-enter-active, .fade-leave-active {
+        transition: all .3s;
+    }
+    .fade-enter, .fade-leave-active {
+        opacity: 0;
     }
 }
