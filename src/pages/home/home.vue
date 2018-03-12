@@ -26,7 +26,7 @@
                         </div>
                     </section>
                 </main>
-                <kyCart></kyCart>
+                <kyCart :cartList="cartList"></kyCart>
             </div>
         </div>
     </div>

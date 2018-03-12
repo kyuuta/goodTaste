@@ -45,5 +45,9 @@ export default {
 
         state.home.cartList = [...cartList];
         setStorage('buyCart', state.home.cartList);
+    },
+    [CLEAR_CART](state) {
+        state.home.cartList = [];
+        setStorage('buyCart', state.home.cartList);
     }
 }

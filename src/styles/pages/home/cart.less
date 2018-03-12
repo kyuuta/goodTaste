@@ -1,6 +1,42 @@
 @import '~*/mixin.less';
 
 .cartview {
+    &-list {
+        position: fixed;
+        left: 0;
+        bottom: 45/@rem;
+        width: 100%;
+        background: skyblue;
+        &-header {
+            height: 30/@rem;
+            display: flex;
+            align-items: center;
+            background: #eceff1;
+            color: #666;
+            padding: 0 10/@rem;
+            .tit {
+                flex: 1;
+                font-size: 12/@rem;
+            }
+            .clear-cart {
+                flex: none;
+                font-size: 10/@rem;
+            }
+        }
+        &-content {
+            background: #fff;
+            ul {
+                padding: 0 10/@rem;
+                li {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    height: 30/@rem;
+                    .border-line;
+                }
+            }
+        }
+    }
     &-footer {
         display: flex;
         align-items: center;
