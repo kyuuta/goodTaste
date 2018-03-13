@@ -1,12 +1,23 @@
 @import '~*/mixin.less';
 
 .cartview {
+    &-mask {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-color: #000;
+        opacity: .4;
+        transition: opacity .3s ease;
+    }
     &-list {
         position: fixed;
         left: 0;
-        bottom: 45/@rem;
+        bottom: 0;
         width: 100%;
-        background: skyblue;
+        padding-bottom: 45/@rem;
+        transition: transform .3s ease;
         &-header {
             height: 30/@rem;
             display: flex;
@@ -62,12 +73,39 @@
             height: 45/@rem;
             color: #fff;
         }
+        // @color1: #2395ff;
+        // @color2: #00a1d6;
+        // @color3: #00b8fe;
+        // @color4: #da5e2e;
+        // @color6: #d74535;
+        // @color5: #e79c37;
         .balance-btn {
-            color: #cccccc;
             height: 45/@rem;
             width: 90/@rem;
             text-align: center;
-            background: #666;
+            transition: background-color .3s ease;
+            &-disabled {
+                color: #cccccc;
+                background: #666;
+            }
+            &-payment {
+                color: #fff;
+                background: #51c332;
+            }
         }
+    }
+
+    .showcartlist-enter-active, .showcartlist-leave-active {
+        transform: translateZ(0);
+    }
+    .showcartlist-enter, .showcartlist-leave-active {
+        transform: translate3d(0, 100% ,0);
+    }
+
+    .mask-fade-enter-active, .mask-fade-leave-active {
+        opacity: .4;
+    }
+    .mask-fade-enter, .mask-fade-leave-active {
+        opacity: 0;
     }
 }

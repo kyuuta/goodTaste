@@ -1,8 +1,14 @@
 <template>
     <div>
         <footer class="cartview">
-            <section class="cartview-list" v-if="cartList.length">
-                <div class="cartview-list">
+            <transition name="mask-fade">
+                <div class="cartview-mask" 
+                     v-show="cartList.length && cartListStatus"
+                     @click="changeCartListStatus"></div>
+            </transition>
+            <transition name="showcartlist">
+                <section v-show="cartList.length && cartListStatus"
+                         class="cartview-list">
                     <div class="cartview-list-header">
                         <span class="tit">已选菜品</span>
                         <div class="clear-cart" @click="clearCart">
@@ -19,14 +25,19 @@
                             </li>
                         </ul>
                     </div>
-                </div>
-            </section>
-            <div class="cartview-footer">
+                </section>
+            </transition>
+            
+            <div class="cartview-footer" @click="changeCartListStatus">
                 <div class="cart-icon"></div>
                 <div class="info">
-                    <p>金额</p>
+                    <p>{{ cartList.length ? '已选菜 暂无价钱' : '请选菜'}}</p>
                 </div>
-                <div class="balance-btn">去结算</div>
+                <div :class="['balance-btn',
+                              !cartList.length ? 
+                              'balance-btn-disabled':
+                              'balance-btn-payment']" 
+                     @click.stop="goPayment">去结算</div>
             </div>
         </footer>
     </div>
@@ -43,7 +54,7 @@
         ],
         data() {
             return {
-                
+                cartListStatus: false
             }
         },
         methods: {
@@ -52,7 +63,20 @@
             ]),
             clearCart() {
                 this.CLEAR_CART();
+            },
+            changeCartListStatus() {
+                this.cartList.length ? this.cartListStatus = !this.cartListStatus : true;
+            },
+            goPayment() {
+                console.log("23333")
             }
+        },
+        watch: {
+            cartList(val) {
+                if(!val.length) {
+                    this.cartListStatus = false;
+                }
+            } 
         },
         components: { kyBuyCart }
     }
