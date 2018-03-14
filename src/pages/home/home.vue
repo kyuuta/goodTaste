@@ -26,9 +26,12 @@
                         </div>
                     </section>
                 </main>
-                <kyCart :cartList="cartList"></kyCart>
+                <kyCart :cartList="cartList"/>
             </div>
         </div>
+
+        <Modal v-show="modalVisible"
+               @close="closeFoodModal"></Modal>
     </div>
 </template>
 
@@ -42,10 +45,11 @@
         name: 'home',
         data() {
             return {
-                menuList: [],                   // 菜单数据
-                categoryNumList: [],            // 分类数量
-                totalPrice: 0,                  // 购物车总价
-                activeCategoryId: null          // 选中category
+                menuList: [],                   // menuListInf
+                categoryNumList: [],            // categoryNum
+                totalPrice: 0,                  // cartListTotal
+                activeCategoryId: null,         // selectedCategory
+                modalVisible: false,            // modalStatus
             }
         },
         computed: {
@@ -55,6 +59,7 @@
         },
         mounted(){
             this.getTest();
+            this.openFoodModal();
         },
         methods: {
             getTest() {
@@ -85,6 +90,14 @@
             },
             changeCategory(id) {
                 this.activeCategoryId = id;
+            },
+            openFoodModal() {
+                this.$eventHub.$on('openFoodModal',(food) => {
+                    console.log(food)
+                })
+            },
+            closeFoodModal() {
+
             }
         },
         watch: {

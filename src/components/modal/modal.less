@@ -1,0 +1,27 @@
+@import '~*/mixin.less';
+
+.modal-wrapper {
+    position: relative;
+    z-index: 9999;
+    .modal-mask {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0,0,0, .5);
+    }
+    .modal {
+        position: fixed;
+        top: 50%;
+        left: 10%;
+        right: 10%;
+        width: 80%;
+        height: 40%;
+        transform: translate3d(0, -50%, 0);
+        overflow: auto;
+        background: #fff;
+        border-radius: 6/@rem;
+        z-index: 6666;
+    }
+}
