@@ -9,20 +9,17 @@
     .menu-view {
         height: 100%;
         width: 100%;
-        &-main {
+        .menuview-main {
+            display: flex;
             height: 100%;
-            width: 100%;
-            // padding-bottom: 45/@rem;
-            background: #fff;
-            .menuview-main {
-                display: flex;
-                height: 100%;
-                // width:100%;
-                .menu-category {
-                    overflow-y: auto;
-                    flex: 0 0 75/@rem;                    
-                    color: #666;
-                    background: #f8f8f8;
+            overflow: hidden;
+            .menu-container {
+                flex: 0 0 75/@rem;
+                width: 75/@rem;
+                color: #666;
+                background: #f8f8f8;
+                .menu-category {  
+                    padding-bottom: 45/@rem;                     
                     .item {
                         position: relative;
                         font-size: 10/@rem;
@@ -48,15 +45,11 @@
                         background: #fff;
                     }
                 }
-                .container {
-                    position: relative;
-                    flex: 1;
-                    display: block;
+            }
+            .container {
+                flex: 1;
+                .scroller {
                     padding-bottom: 45/@rem;
-                    .scroller {
-                        overflow-y: auto;
-                        height: 100%;
-                    }
                 }
             }
         }
