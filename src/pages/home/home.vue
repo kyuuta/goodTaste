@@ -7,9 +7,10 @@
                         <li v-for="(category, index) in menuList"
                             :class="[
                                 'item',
-                                {'active': index == activeCategoryIndex}
+                                {'active': index === currentIndex}
                             ]"
                             :key="index"
+                            ref="menuList"
                             @click="changeCategory(index, $event)">
                             <span>{{ category.name }}</span>
                             <span class="num-tag"
@@ -23,6 +24,7 @@
                     <div class="scroller">
                         <kyMenu v-for="(menu, index) in menuList"
                                 :key="index"
+                                ref="foodList"
                                 :menuData="menu" />
                     </div>
                 </section>
@@ -46,19 +48,29 @@
         name: 'home',
         data() {
             return {
-                menuList: [],                   // menuListInf
-                categoryNumList: [],            // categoryNum
-                totalPrice: 0,                  // cartListTotal
-                activeCategoryIndex: 0,         // selectedCategory
-                modalVisible: false,            // modalStatus
-                foodListScrollY: 0,             // foodListScrollY
-                foodListHeightArr: [],          // foodListHeightArr
+                menuList: [],                   // 菜单数据
+                categoryNumList: [],            // 分类已选数量
+                totalPrice: 0,                  // 购物车总价
+                modalVisible: false,            // 菜品属性弹窗状态
+                foodListScrollY: 0,             // 菜品scrollY
+                foodListHeightArr: [],          // 菜品分类高度
             }
         },
         computed: {
             ...mapState({
                 cartList: state => state.home.cartList
-            })
+            }),
+            currentIndex() {
+                for (let i = 0, foodArr = this.foodListHeightArr; i < foodArr.length; i++) {
+                    let active = foodArr[i];
+                    let next = foodArr[i + 1];
+                    if (!next || (this.foodListScrollY >= active && this.foodListScrollY < next)) {
+                        this.menuScroll.scrollToElement(this.$refs.menuList[i], 200, 0, -100);
+                        return i;
+                    }
+                }
+                return 0;
+            },
         },
         created() {
             this.getTest();
@@ -71,18 +83,17 @@
                 }).then(res => {
                     this.menuList = res.data;
                     this.$nextTick(()=> {
-                        this.calculateFoodListHeight();
                         this.initScroll();
+                        this.calculateFoodListHeight();
                     })
                 })
             },
             // initBetterScroll
             initScroll() {
-                const menuScroll = new BScroll(this.$refs.menuWrapper, {
+                this.menuScroll = new BScroll(this.$refs.menuWrapper, {
                     click: true,
                     bounce: false
                 })
-                const menuWrapperHeight = this.$refs.menuWrapper.clientHeight;
                 this.foodsScroll = new BScroll(this.$refs.foodsWrapper, {
                     click: true,
                     bounce: false,
@@ -90,27 +101,17 @@
                 })
                 this.foodsScroll.on('scroll', pos => {
                     if(pos.y <= 0) {
-                        this.scrollY = Math.abs(Math.round(pos.y));
-                        for(let i = 0; i < this.foodListHeightArr.length; i++) {
-                            let nowTop = this.foodListHeightArr[i];
-                            let nextHeight = this.foodListHeightArr[i+1];
-                            if(!nextHeight || (this.scrollY >= nowTop && this.scrollY < nextHeight)) {
-                                this.activeCategoryIndex = i;
-                                const menuList = this.$refs.menuWrapper.querySelectorAll('.active');
-                                const el = menuList[0];
-                                menuScroll.scrollToElement(el, 800, 0, -(menuWrapperHeight/2 - 50));
-                                break;
-                            }
-                        }
+                        this.foodListScrollY = Math.abs(Math.round(pos.y));      
                     }
                 })
             },
             // calculateFoodListHeight
             calculateFoodListHeight() {
-                const listContainer = this.$refs.foodsWrapper;
-                const listArr = Array.from(listContainer.children[0].children);
-                listArr.forEach((item, index) => {
-                    this.foodListHeightArr[index] = item.offsetTop;
+                let height = 0;
+                this.foodListHeightArr.push(height);
+                this.$refs.foodList.forEach((item, index) => {
+                    height += item.$el.clientHeight;
+                    this.foodListHeightArr.push(height)
                 })
             },
             initRenderInfo() {
@@ -132,13 +133,8 @@
                 this.categoryNumList = [...categoryArr];
             },
             changeCategory(index,event) {
-                if (!event._constructed) {
-                    return;
-                }
-                console.log("111")
-                let foodList = this.$refs.foodsWrapper;
-                let el = foodList[index];
-                this.foodsScroll.scrollTo(0, -this.foodListHeightArr[index], 400);
+                if (!event._constructed) return;
+                this.foodsScroll.scrollToElement(this.$refs.foodList[index].$el, 300);
             },
             openFoodModal() {
                 this.$eventHub.$on('openFoodModal',(food) => {
