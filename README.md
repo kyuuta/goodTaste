@@ -9,7 +9,9 @@
 
 ## 简介
 
-`goodTaste` 正在制作中... 一个兴趣使然的小项目~ 
+See my [About](/about/) page for details.
+
+`goodTaste` 一个兴趣使然基于vue2的点餐项目 正在制作中...
 
 ## Build Setup
 
@@ -19,13 +21,27 @@ npm install
 
 # serve with hot reload at localhost:23333
 npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-# goodTaste
+## 开发计划
+
+1、一个面向用户的移动端点餐。
+
+2、一个面向商家的PC端商户后台管理系统 and more...
+
+## Developers
+
+<p align="center">
+	<img src="https://github.com/kyuuta/goodTaste/tree/master/screenshots/kyuuta.jpg" width="200" height="200"/>
+	</br><a href="https://github.com/kyuuta">kyuuta(FE)</a>
+<p>
+
+<p align="center">
+	<img src="https://github.com/kyuuta/goodTaste/tree/master/screenshots/haibotvr.jpg" width="200" height="200"/>
+	</br><a href="https://github.com/haibotvr">haibotvr(FE)</a>
+<p>
+
+<p align="center">
+	<img src="https://github.com/kyuuta/goodTaste/tree/master/screenshots/kyuuta.png" width="200" height="200"/>
+	</br><a href="https://github.com/dczz">dczz(FE)</a>
+<p>
