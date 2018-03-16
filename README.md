@@ -38,10 +38,10 @@ npm run dev
 
 <p align="center">
 	<img src="https://github.com/kyuuta/goodTaste/blob/master/screenshots/haibotvr.jpg" width="200" height="200"/>
-	</br><a href="https://github.com/haibotvr">haibotvr(FE)</a>
+	</br><a href="https://github.com/haibotvr">haibotvr</a>
 <p>
 
 <p align="center">
 	<img src="null" width="200" height="200"/>
-	</br><a href="https://github.com/dczz">dczz(FE)</a>
+	</br><a href="https://github.com/dczz">dczz</a>
 <p>
