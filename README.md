@@ -32,16 +32,16 @@ npm run dev
 ## Developers
 
 <p align="center">
-	<img src="https://github.com/kyuuta/goodTaste/tree/master/screenshots/kyuuta.jpg" width="200" height="200"/>
+	<img src="https://github.com/kyuuta/goodTaste/blob/master/screenshots/kyuuta.jpg" width="200" height="200"/>
 	</br><a href="https://github.com/kyuuta">kyuuta(FE)</a>
 <p>
 
 <p align="center">
-	<img src="https://github.com/kyuuta/goodTaste/tree/master/screenshots/haibotvr.jpg" width="200" height="200"/>
+	<img src="https://github.com/kyuuta/goodTaste/blob/master/screenshots/haibotvr.jpg" width="200" height="200"/>
 	</br><a href="https://github.com/haibotvr">haibotvr(FE)</a>
 <p>
 
 <p align="center">
-	<img src="https://github.com/kyuuta/goodTaste/tree/master/screenshots/kyuuta.png" width="200" height="200"/>
+	<img src="null" width="200" height="200"/>
 	</br><a href="https://github.com/dczz">dczz(FE)</a>
 <p>
