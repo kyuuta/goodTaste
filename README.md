@@ -9,8 +9,6 @@
 
 ## 简介
 
-See my [About](/about/) page for details.
-
 `goodTaste` 一个兴趣使然基于vue2的点餐项目 正在制作中...
 
 ## Build Setup
