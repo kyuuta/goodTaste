@@ -30,11 +30,29 @@ npm run dev
 ## Developers
 
 <p align="center">
-	<img src="https://github.com/kyuuta/goodTaste/blob/master/screenshots/kyuuta.jpg" width="200" height="200"/>
-	</br><a href="https://github.com/kyuuta">kyuuta(FE)</a>
+	<div  align="float">
+		<img 
+		src="https://github.com/kyuuta/goodTaste/blob/master/screenshots/kyuuta.jpg" width="200" height="200"/>
+		</br><a href="https://github.com/kyuuta">kyuuta(FE)</a>
+	</div>
+	<div  align="float">
+		<img 
+		src="https://github.com/kyuuta/goodTaste/blob/master/screenshots/kyuuta.jpg" width="200" height="200"/>
+		</br><a href="https://github.com/kyuuta">kyuuta(FE)</a>
+	</div>
+	<!-- <img 
+	src="https://github.com/kyuuta/goodTaste/blob/master/screenshots/kyuuta.jpg" width="200" height="200"/>
+	<img 
+	src="https://github.com/kyuuta/goodTaste/blob/master/screenshots/kyuuta.jpg" width="200" height="200"/> -->
+	<!-- <a href="https://github.com/kyuuta">kyuuta(FE)</a> -->
+	<!-- <img src="https://github.com/kyuuta/goodTaste/blob/master/screenshots/haibotvr.jpg" width="200" height="200"/>
+	</br><a href="https://github.com/haibotvr">haibotvr</a>
+	<img src="null" width="200" height="200"/>
+	</br><a href="https://github.com/dczz">dczz</a> -->
+	</div>
 <p>
 
-<p align="center">
+<!-- <p align="center">
 	<img src="https://github.com/kyuuta/goodTaste/blob/master/screenshots/haibotvr.jpg" width="200" height="200"/>
 	</br><a href="https://github.com/haibotvr">haibotvr</a>
 <p>
@@ -42,4 +60,4 @@ npm run dev
 <p align="center">
 	<img src="null" width="200" height="200"/>
 	</br><a href="https://github.com/dczz">dczz</a>
-<p>
+<p> -->
