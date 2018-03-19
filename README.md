@@ -15,7 +15,7 @@
 
 ``` bash
 # clone the project
-git clone https://git@github.com:kyuuta/goodTaste.git
+git clone https://github.com/kyuuta/goodTaste.git
 
 # install dependencies
 npm install
