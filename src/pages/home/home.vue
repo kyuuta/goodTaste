@@ -41,8 +41,8 @@
     import { mapState } from 'vuex';
     import BScroll from 'better-scroll';
 
-    import kyMenu from './children/menu';
-    import kyCart from './children/cart';
+    import kyMenu from './children/Menu';
+    import kyCart from './children/Cart';
 
     export default {
         name: 'home',
@@ -72,7 +72,7 @@
                 return 0;
             },
         },
-        created() {
+        mounted() {
             this.getTest();
             this.openFoodModal();
         },

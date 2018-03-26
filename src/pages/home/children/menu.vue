@@ -29,7 +29,7 @@
 </template>
 
 <script>
-    import kyBuyCart from '@/common/buyCart';
+    import kyBuyCart from '@/common/BuyCart';
 
     export default {
         name: 'kyMenu',

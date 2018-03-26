@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import loadingPrompt from './loadingPrompt.vue';
+import loadingPrompt from './LoadingPrompt.vue';
 
 
 const LoadingPrompt = Vue.extend(loadingPrompt);

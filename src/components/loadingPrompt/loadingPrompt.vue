@@ -2,7 +2,11 @@
     <transition name="fade-in-out">
         <div class="ky-loading-prompt" v-show="visible">
             <div class="ky-loading-prompt-wrapper">
-                <div class="loading-round"></div>
+                <div class="orbit-spinner">
+                    <div class="orbit"></div>
+                    <div class="orbit"></div>
+                    <div class="orbit"></div>
+                </div>
                 <p class="loading-text" v-show="text">{{ text }}</p>
             </div>
         </div>
@@ -45,19 +49,45 @@
             justify-content: center;
             align-items: center;
             background: rgba(0, 0, 0, .7);
-            color: white;
+            color: #fff;
         }
 
-        .loading-round {
-            align-self: center;
-            animation: loading-round .9s infinite linear;
-            height: 25/@rem;
-            width: 25/@rem;
-            border: 3/@rem solid transparent;
-            border-top-color: #fff;
-            border-left-color: #fff;
-            border-bottom-color: #fff;
+        .orbit-spinner, .orbit-spinner * {
+            box-sizing: border-box;
+        }
+
+        .orbit-spinner {
+            height: 40/@rem;
+            width: 40/@rem;
             border-radius: 50%;
+            perspective: 800px;
+            .orbit {
+                position: absolute;
+                box-sizing: border-box;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                &:nth-child(1) {
+                    left: 0%;
+                    top: 0%;
+                    animation: orbit-spinner-orbit-one-animation 1200ms linear infinite;
+                    border-bottom: 3/@rem solid #fff;
+                }
+                &:nth-child(2) {
+                    right: 0%;
+                    top: 0%;
+                    animation: orbit-spinner-orbit-two-animation 1200ms linear infinite;
+                    border-right: 3/@rem solid #fff;
+                }
+                &:nth-child(3) {
+                    right: 0%;
+                    bottom: 0%;
+                    animation: orbit-spinner-orbit-three-animation 1200ms linear infinite;
+                    border-top: 3/@rem solid #fff;
+                }
+
+
+            }
         }
 
         .loading-text {
@@ -70,12 +100,30 @@
         opacity: 0;
     }
 
-    @keyframes loading-round {
+    @keyframes orbit-spinner-orbit-one-animation {
         0% {
-            transform: rotate(0deg);
+            transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
         }
         100% {
-            transform: rotate(360deg);
+            transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+        }
+    }
+
+    @keyframes orbit-spinner-orbit-two-animation {
+        0% {
+            transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+        }
+        100% {
+            transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+        }
+    }
+
+    @keyframes orbit-spinner-orbit-three-animation {
+        0% {
+            transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg);
+        }
+        100% {
+            transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
         }
     }
 </style>

@@ -17,7 +17,8 @@
                     </div>
                     <div class="cartview-list-content">
                         <ul>
-                            <li class="food" 
+                            <li 
+                                class="food" 
                                 v-for="food in cartList"
                                 :key="food.id">
                                 <span>{{ food.name }}</span>
@@ -28,16 +29,17 @@
                 </section>
             </transition>
             
-            <div class="cartview-footer" @click="changeCartListStatus">
+            <div class="cartview-footer" 
+                 @click="changeCartListStatus">
                 <div class="cart-icon"></div>
                 <div class="info">
                     <p>{{ cartList.length ? '已选菜 暂无价钱' : '请选菜'}}</p>
                 </div>
-                <div :class="['balance-btn',
+                <div @click.stop="goPayment"
+                     :class="['balance-btn',
                               !cartList.length ? 
                               'balance-btn-disabled':
-                              'balance-btn-payment']" 
-                     @click.stop="goPayment">去结算</div>
+                              'balance-btn-payment']">去结算</div>
             </div>
         </footer>
     </div>
@@ -45,7 +47,7 @@
 
 <script>    
     import { mapMutations } from 'vuex';
-    import kyBuyCart from '@/common/buyCart';
+    import kyBuyCart from '@/common/BuyCart';
 
     export default {
         name: 'kyCart',
