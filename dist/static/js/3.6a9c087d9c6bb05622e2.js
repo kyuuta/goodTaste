@@ -1,0 +1,2 @@
+webpackJsonp([3],{"3reG":function(e,n,t){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var r={render:function(){var e=this.$createElement;return(this._self._c||e)("div",[this._v("\n    你想要的~东西啊~并不存在~\n")])},staticRenderFns:[]};var a=t("Z0/y")({name:"notFound",data:function(){return{}}},r,!1,function(e){t("H6YP")},"data-v-4d6ddb7b",null);n.default=a.exports},H6YP:function(e,n){}});
+//# sourceMappingURL=3.6a9c087d9c6bb05622e2.js.map
