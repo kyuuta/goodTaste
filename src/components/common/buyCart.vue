@@ -1,6 +1,5 @@
 <template>
     <section class="ky-buycart">
-
         <transition name="showReduce">
             <span v-if="foodNum"
                   class="minus-btn" 
@@ -8,6 +7,7 @@
                 <i class="icon-minus"></i> 
             </span>
         </transition>
+        
         <transition name="fade">
             <span v-if="foodNum" 
                   class="count">{{ foodNum }}</span>
@@ -15,7 +15,6 @@
         <span class="add-btn" @click="addToCart">
             <i class="icon-add"></i> 
         </span>
-
     </section>
 </template>
 

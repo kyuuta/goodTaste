@@ -3,6 +3,7 @@
         <div class="menu-view">
             <main class="menuview-main">
                 <section class="menu-container" ref="menuWrapper">
+
                     <ul class="menu-category">
                         <li v-for="(category, index) in menuList"
                             :class="[
@@ -19,14 +20,17 @@
                             </span>
                         </li>
                     </ul>
+
                 </section>
                 <section class="container" ref="foodsWrapper">
+
                     <div class="scroller">
                         <kyMenu v-for="(menu, index) in menuList"
                                 :key="index"
                                 ref="foodList"
                                 :menuData="menu" />
                     </div>
+                    
                 </section>
             </main>
             <kyCart :cartList="cartList" />
