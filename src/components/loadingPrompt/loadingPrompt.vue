@@ -16,13 +16,13 @@
 <script>
     export default {
         name: 'loadingPrompt',
+        props: {
+            text: String
+        },
         data() {
             return {
                 visible: false
             }
-        },
-        props: {
-            text: String
         }
     }
 </script>
