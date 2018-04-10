@@ -36,7 +36,7 @@
             <kyCart :cartList="cartList" />
         </div>
 
-        <Modal v-show="modalVisible"
+        <Modal v-model="modalVisible"
                @close="closeFoodModal" />
     </div>
 </template>

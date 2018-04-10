@@ -17,8 +17,7 @@
                     </div>
                     <div class="cartview-list-content">
                         <ul>
-                            <li 
-                                class="food" 
+                            <li class="food" 
                                 v-for="food in cartList"
                                 :key="food.id">
                                 <span>{{ food.name }}</span>
