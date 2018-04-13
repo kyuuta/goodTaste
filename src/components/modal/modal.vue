@@ -42,11 +42,9 @@
                 default: false
             }
         },
-        data() {
-            return {
-                visible: this.value
-            }
-        },
+        data: () => ({
+            visible: this.value
+        }),
         methods: {
             close() {
                 this.visible = false;

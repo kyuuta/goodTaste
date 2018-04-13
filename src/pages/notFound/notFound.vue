@@ -7,11 +7,7 @@
 <script>
     export default {
         name: 'notFound',
-        data() {
-            return {
-                
-            }
-        }
+        data: () => ({})
     }
 </script>
 

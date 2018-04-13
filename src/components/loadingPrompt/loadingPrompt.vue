@@ -19,11 +19,7 @@
         props: {
             text: String
         },
-        data() {
-            return {
-                visible: false
-            }
-        }
+        data: () => ({ visible: false })
     }
 </script>
 

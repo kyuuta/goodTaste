@@ -1,8 +1,10 @@
 <template>
 	<div class="app-wrapper">
-		<keep-alive :include="$store.state.config.keepAlivePage.join(',')">
-			<router-view/>
-		</keep-alive>
+		<!-- <transition :name="transitionName"> -->
+			<keep-alive :include="$store.state.config.keepAlivePage.join(',')">
+				<router-view class="ky-view"/>
+			</keep-alive>
+		<!-- </transition> -->
 	</div>
 </template>
 
@@ -11,8 +13,18 @@
 		name: "pageApp",
 		mounted() {
 		},
+		data: () => ({
+			//  transitionName: 'slide-left'
+		}),
 		methods: {
 			
+		},
+		watch: {
+			// '$route'(to, from) {
+			// 	const toDepth = to.path.split('/').length
+			// 	const fromDepth = from.path.split('/').length
+			// 	this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
+			// }
 		}
 	}
 </script>
@@ -31,5 +43,21 @@
 			height: 100%;
 		}
 	}
+	// .ky-view {
+	// 	position: absolute;
+	// 	width: 100%;
+	// 	transition: all .8s ease;
+	// }
+	// .slide-left-enter,
+	// .slide-right-leave-active {
+	// 	-webkit-transform: translate(100%, 0);
+	// 	transform: translate(100%, 0);
+	// }
+
+	// .slide-left-leave-active,
+	// .slide-right-enter {
+	// 	-webkit-transform: translate(-100%, 0);
+	// 	transform: translate(-100% 0);
+	// }
 </style>
 

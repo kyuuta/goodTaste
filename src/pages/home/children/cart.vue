@@ -53,11 +53,9 @@
         props: [
             'cartList'
         ],
-        data() {
-            return {
-                cartListStatus: false
-            }
-        },
+        data: () => ({
+            cartListStatus: false
+        }),
         methods: {
             ...mapMutations([
                 'CLEAR_CART'

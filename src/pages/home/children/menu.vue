@@ -33,11 +33,7 @@
 
     export default {
         name: 'kyMenu',
-        data() {
-            return {
-                
-            }
-        },
+        data: () => ({}),
         props: {
             menuData: {
                 type: Object,

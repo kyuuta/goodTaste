@@ -50,16 +50,14 @@
 
     export default {
         name: 'home',
-        data() {
-            return {
-                menuList: [],                   // 菜单数据
-                categoryNumList: [],            // 分类已选数量
-                totalPrice: 0,                  // 购物车总价
-                modalVisible: false,            // 菜品属性弹窗状态
-                foodListScrollY: 0,             // 菜品scrollY
-                foodListHeightArr: [],          // 菜品分类高度
-            }
-        },
+        data: () => ({
+            menuList: [],                   // 菜单数据
+            categoryNumList: [],            // 分类已选数量
+            totalPrice: 0,                  // 购物车总价
+            modalVisible: false,            // 菜品属性弹窗状态
+            foodListScrollY: 0,             // 菜品scrollY
+            foodListHeightArr: [],          // 菜品分类高度
+        }),
         computed: {
             ...mapState({
                 cartList: state => state.home.cartList

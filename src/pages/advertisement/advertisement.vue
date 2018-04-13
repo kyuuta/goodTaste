@@ -13,11 +13,9 @@
 
     export default {
         name: 'advertisement',
-        data() {
-            return {
-                skipTime: 3
-            }
-        },
+        data: () => ({
+            skipTime: 3
+        }),
         mounted() {
             this.skipCountDown();
         },
