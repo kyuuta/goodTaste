@@ -18,6 +18,9 @@
         width: 100%;
         padding-bottom: 45/@rem;
         transition: transform .3s ease;
+        &-iphonex {
+            .iphonex-bottom(45/@rem);
+        }
         &-header {
             height: 30/@rem;
             display: flex;
@@ -55,10 +58,15 @@
         left: 0;
         bottom: 0;
         height: 45/@rem;
+        box-sizing: content-box;
         width: 100%;
         line-height: 45/@rem;
-        padding-left: 75/@rem;
         background: rgba(61,61,63,.9);
+        &-iphonex {
+            .iphonex-bottom();
+            // padding-bottom: 15/@rem;
+        }
+        // padding-bottom: env(safe-area-inset-bottom);
         .cart-icon {
             position: absolute;
             left: 14/@rem;
@@ -70,7 +78,7 @@
         }
         .info {
             flex: 1;
-            height: 45/@rem;
+            padding-left: 75/@rem;
             color: #fff;
         }
         // @color1: #2395ff;
@@ -80,17 +88,24 @@
         // @color6: #d74535;
         // @color5: #e79c37;
         .balance-btn {
-            height: 45/@rem;
+            height: 100%;
             width: 90/@rem;
             text-align: center;
             transition: background-color .3s ease;
             &-disabled {
                 color: #cccccc;
-                background: #666;
             }
             &-payment {
                 color: #fff;
                 background: #51c332;
+                &-iphonex {
+                    color: #fff;
+                    background: #51c332;
+                    border-radius: 5px;
+                    height: 35/@rem;
+                    line-height: 35/@rem;
+                    margin: 5/@rem 12/@rem 0 0;
+                }
             }
         }
     }

@@ -54,7 +54,7 @@
             ]),
             addToCart() {
                 this.ADD_CART(this.food);
-                this.openFoodModal(this.food);
+                // this.openFoodModal(this.food);
             },
             reduceToCart() {
                 this.REDUCE_CART(this.food.id);

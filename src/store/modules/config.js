@@ -3,7 +3,8 @@ const state = {
     scrollPosition: {
         x: 0,
         y: 0
-    }
+    },
+    isPhoneX: false
 };
 
 export default {

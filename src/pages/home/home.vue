@@ -1,10 +1,11 @@
 <template>
     <div class="home">
+         <!-- :style="{'position': $refs.cart.$data.cartListStatus ? 'static' : 'fixed'}"> -->
         <div class="menu-view">
             <main class="menuview-main">
                 <section class="menu-container" ref="menuWrapper">
 
-                    <ul class="menu-category">
+                    <ul class="menu-category" :class="{'menu-category-iphonex': this.$store.state.config.isPhoneX}">
                         <li v-for="(category, index) in menuList"
                             :class="[
                                 'item',
@@ -24,7 +25,8 @@
                 </section>
                 <section class="container" ref="foodsWrapper">
 
-                    <div class="scroller">
+                    <div class="scroller" 
+                         :class="{'scroller-iphonex': this.$store.state.config.isPhoneX}">
                         <kyMenu v-for="(menu, index) in menuList"
                                 :key="index"
                                 ref="foodList"
@@ -33,7 +35,11 @@
                     
                 </section>
             </main>
-            <kyCart :cartList="cartList" />
+            <kyCart :cartList="cartList" ref="cart" />
+
+            <!-- <div class="test">
+                <input type="text"  placeholder="wirte something..">
+            </div> -->
         </div>
 
         <Modal v-model="modalVisible"
@@ -77,6 +83,8 @@
         mounted() {
             this.getTest();
             this.openFoodModal();
+            this.isIphoneX();
+            console.log(this.$refs.cart.$data.cartListStatus)
         },
         methods: {
             getTest() {
@@ -89,6 +97,12 @@
                         this.calculateFoodListHeight();
                     })
                 })
+            },
+            // isIphoneX
+            isIphoneX() {
+                const w = window.screen.width * window.devicePixelRatio;
+                const h = window.screen.height * window.devicePixelRatio;
+                w == 1125 && h == 2436 ? this.$store.state.config.isPhoneX = true : this.$store.state.config.isPhoneX = false;
             },
             // initBetterScroll
             initScroll() {
