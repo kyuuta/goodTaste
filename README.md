@@ -30,18 +30,13 @@ npm run dev
 
 2、一个面向商家的PC端商户后台管理系统 and more...
 
+
 ## Developers
+|Name|||
+|---|---|---|
+|[KYUUTA](https://github.com/kyuuta)|  ![](https://avatars3.githubusercontent.com/u/18129344?v=3&s=60)  | FE 
+|[haibotvr](https://github.com/haibotvr)|  ![](https://avatars3.githubusercontent.com/u/17756054?v=3&s=60)  |DE
+| [dczz](https://github.com/dczz)       |  null | DE |
 
-<p>
-	<img src="https://github.com/kyuuta/goodTaste/blob/master/screenshots/kyuuta.jpg" width="200" height="200"/>
-	</br><a href="https://github.com/kyuuta">KYUUTA(FE)</a>
-<p>
-<p>
-	<img src="https://github.com/kyuuta/goodTaste/blob/master/screenshots/haibotvr.jpg" width="200" height="200"/>
-	</br><a href="https://github.com/haibotvr">haibotvr(DE)</a>
-<p>
 
-<p>
-	<img src="null" width="200" height="200"/>
-	</br><a href="https://github.com/dczz">dczz(DE)</a>
-<p>
+
