@@ -1,6 +1,6 @@
 <template>
-    <div class="home">
-         <!-- :style="{'position': $refs.cart.$data.cartListStatus ? 'static' : 'fixed'}"> -->
+    <div class="home"
+         :style="{'position': !cartListStatus ? 'static' : 'fixed'}">
         <div class="menu-view">
             <main class="menuview-main">
                 <section class="menu-container" ref="menuWrapper">
@@ -35,7 +35,8 @@
                     
                 </section>
             </main>
-            <kyCart :cartList="cartList" ref="cart" />
+            <kyCart v-model="cartListStatus"
+                    @changeCartStatus="cartHandleClick" />
 
             <!-- <div class="test">
                 <input type="text"  placeholder="wirte something..">
@@ -61,6 +62,7 @@
             categoryNumList: [],            // 分类已选数量
             totalPrice: 0,                  // 购物车总价
             modalVisible: false,            // 菜品属性弹窗状态
+            cartListStatus: false,          // 购物车状态
             foodListScrollY: 0,             // 菜品scrollY
             foodListHeightArr: [],          // 菜品分类高度
         }),
@@ -84,7 +86,6 @@
             this.getTest();
             this.openFoodModal();
             this.isIphoneX();
-            console.log(this.$refs.cart.$data.cartListStatus)
         },
         methods: {
             getTest() {
@@ -157,13 +158,20 @@
                     this.modalVisible = true;
                 })
             },
+            // 点击购物车
+            cartHandleClick() {
+                this.cartList.length ? this.cartListStatus = !this.cartListStatus : false;
+            },
             closeFoodModal() {
                 
             }
         },
         watch: {
             cartList: {
-                handler() {
+                handler(val) {
+                    if(!val.length) {
+                        this.cartListStatus = false;
+                    }
                     this.initRenderInfo();
                 },
                 deep: true

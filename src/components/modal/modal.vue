@@ -48,10 +48,11 @@
         methods: {
             close() {
                 this.visible = false;
-                this.$emit('close');
+                this.$emit('input', false);
             },
             cancel() {
                 this.close();
+                this.$emit('close');
             },
             confirm() {
                 this.close();

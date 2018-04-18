@@ -1,14 +1,14 @@
 <template>
-    <footer class="cartview" @scroll="test">
+    <footer class="cartview">
         <transition name="mask-fade">
             <div class="cartview-mask" 
-                    v-show="cartList.length && cartListStatus"
-                    @click="changeCartListStatus"></div>
+                 v-show="visible"
+                 @click="maskHandleClick"></div>
         </transition>
         <transition name="showcartlist">
-            <section v-show="cartList.length && cartListStatus"
-                        class="cartview-list"
-                        :class="{'cartview-list-iphonex': this.$store.state.config.isPhoneX}">
+            <section v-show="visible"
+                     class="cartview-list"
+                     :class="{'cartview-list-iphonex': this.$store.state.config.isPhoneX}">
                 <div class="cartview-list-header">
                     <span class="tit">已选菜品</span>
                     <div class="clear-cart" @click="clearCart">
@@ -29,8 +29,8 @@
         </transition>
         
         <div class="cartview-footer"
-                :class="{'cartview-footer-iphonex': this.$store.state.config.isPhoneX}" 
-                @click="changeCartListStatus">
+             :class="{'cartview-footer-iphonex': this.$store.state.config.isPhoneX}" 
+             @click="changeCartListStatus">
             <div class="cart-icon"></div>
             <div class="info">
                 <p>{{ cartList.length ? '已选菜 暂无价钱' : '请选菜1111'}}</p>
@@ -45,16 +45,24 @@
 </template>
 
 <script>    
-    import { mapMutations } from 'vuex';
+    import { mapMutations, mapState } from 'vuex';
     import kyBuyCart from '@/common/BuyCart';
 
     export default {
         name: 'kyCart',
-        props: [
-            'cartList'
-        ],
+        props: {
+            value: {
+                type: Boolean,
+                default: false
+            }
+        },
+        computed: {
+            ...mapState({
+                cartList: state => state.home.cartList
+            })
+        },
         data: () => ({
-            cartListStatus: false
+            visible: this.value
         }),
         methods: {
             ...mapMutations([
@@ -63,22 +71,21 @@
             clearCart() {
                 this.CLEAR_CART();
             },
+            maskHandleClick() {
+                this.visible = false;
+                this.$emit('input', false);
+            },
             changeCartListStatus() {
-                this.cartList.length ? this.cartListStatus = !this.cartListStatus : true;
+                this.$emit('changeCartStatus');
             },
             goPayment() {
                 console.log("23333")
-            },
-            test() {
-                alert("111")
             }
         },
         watch: {
-            cartList(val) {
-                if(!val.length) {
-                    this.cartListStatus = false;
-                }
-            } 
+            value (val) {
+                this.visible = val;
+            }
         },
         components: { kyBuyCart }
     }
