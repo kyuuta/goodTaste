@@ -128,6 +128,7 @@
                 let height = 0;
                 this.foodListHeightArr.push(height);
                 this.$refs.foodList.forEach((item, index) => {
+                    // -1 iphonex
                     height += item.$el.clientHeight - 1;
                     this.foodListHeightArr.push(height)
                 })
