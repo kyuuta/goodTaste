@@ -6,6 +6,13 @@
     height: 100%;
     width: 100%;
 
+    @supports (margin: max(60/@rem)) {
+        .scroller,
+        .menu-category {
+            padding-bottom: max(60/@rem, env(safe-area-inset-bottom));
+        }
+    }
+    
     .menu-view {
         height: 100%;
         width: 100%;
@@ -19,10 +26,7 @@
                 color: #666;
                 background: #f8f8f8;
                 .menu-category {
-                    padding-bottom: 45/@rem;    
-                    &-iphonex {
-                        .iphonex-bottom(45/@rem);
-                    }                
+                    padding-bottom: max(60/@rem, env(safe-area-inset-bottom));            
                     .item {
                         position: relative;
                         font-size: 10/@rem;
@@ -53,10 +57,7 @@
                 flex: 1;
                 background: #fff;
                 .scroller {
-                    padding-bottom: 45/@rem;
-                    &-iphonex {
-                        .iphonex-bottom(45/@rem);
-                    }
+                    padding-bottom: max(60/@rem, env(safe-area-inset-bottom));
                 }
             }
         }

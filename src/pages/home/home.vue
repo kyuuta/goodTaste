@@ -5,7 +5,7 @@
             <main class="menuview-main">
                 <section class="menu-container" ref="menuWrapper">
 
-                    <ul class="menu-category" :class="{'menu-category-iphonex': this.$store.state.config.isPhoneX}">
+                    <ul class="menu-category" >
                         <li v-for="(category, index) in menuList"
                             :class="[
                                 'item',
@@ -25,8 +25,7 @@
                 </section>
                 <section class="container" ref="foodsWrapper">
 
-                    <div class="scroller" 
-                         :class="{'scroller-iphonex': this.$store.state.config.isPhoneX}">
+                    <div class="scroller">
                         <kyMenu v-for="(menu, index) in menuList"
                                 :key="index"
                                 ref="foodList"
@@ -82,10 +81,12 @@
                 return 0;
             },
         },
+        created() {
+            this.isIphoneX();
+        },
         mounted() {
             this.getTest();
             this.openFoodModal();
-            this.isIphoneX();
         },
         methods: {
             getTest() {
@@ -127,7 +128,7 @@
                 let height = 0;
                 this.foodListHeightArr.push(height);
                 this.$refs.foodList.forEach((item, index) => {
-                    height += item.$el.clientHeight;
+                    height += item.$el.clientHeight - 1;
                     this.foodListHeightArr.push(height)
                 })
             },
