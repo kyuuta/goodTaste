@@ -33,7 +33,7 @@
              @click="changeCartListStatus">
             <div class="cart-icon"></div>
             <div class="info">
-                <p>{{ cartList.length ? '已选菜 暂无价钱' : '请选菜1111'}}</p>
+                <p>{{ cartList.length ? '已选菜 暂无价钱' : '请选菜'}}</p>
             </div>
             <div @click.stop="goPayment"
                     :class="['balance-btn',

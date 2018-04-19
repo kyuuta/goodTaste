@@ -2,7 +2,8 @@ import {
     INIT_CART,
     ADD_CART,
     REDUCE_CART,
-    CLEAR_CART
+    CLEAR_CART,
+    IS_IPHONEX
 } from '../mutation-types';
 
 import {
@@ -49,5 +50,10 @@ export default {
     [CLEAR_CART](state) {
         state.home.cartList = [];
         setStorage('buyCart', state.home.cartList);
+    },
+    [IS_IPHONEX](state) {
+        const w = window.screen.width * window.devicePixelRatio;
+        const h = window.screen.height * window.devicePixelRatio;
+        w == 1125 && h == 2436 ? state.config.isPhoneX = true : state.config.isPhoneX = false;
     }
 }

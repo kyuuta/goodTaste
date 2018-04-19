@@ -6,6 +6,8 @@
 </template>
 
 <script>
+    import { mapMutations } from 'vuex';
+
     /*
      *  昨天熬夜3点多有点困Zzz..
      *  created by kyuuta on 2018-02-27 11:21:33
@@ -16,10 +18,16 @@
         data: () => ({
             skipTime: 3
         }),
+        created() {
+            this.IS_IPHONEX();
+        },
         mounted() {
             this.skipCountDown();
         },
         methods: {
+            ...mapMutations([
+                'IS_IPHONEX'
+            ]),
             skipCountDown() {
                 let timer = setInterval(()=>{
                     if(this.skipTime > 1) {

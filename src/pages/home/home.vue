@@ -81,9 +81,6 @@
                 return 0;
             },
         },
-        created() {
-            this.isIphoneX();
-        },
         mounted() {
             this.getTest();
             this.openFoodModal();
@@ -99,12 +96,6 @@
                         this.calculateFoodListHeight();
                     })
                 })
-            },
-            // isIphoneX
-            isIphoneX() {
-                const w = window.screen.width * window.devicePixelRatio;
-                const h = window.screen.height * window.devicePixelRatio;
-                w == 1125 && h == 2436 ? this.$store.state.config.isPhoneX = true : this.$store.state.config.isPhoneX = false;
             },
             // initBetterScroll
             initScroll() {

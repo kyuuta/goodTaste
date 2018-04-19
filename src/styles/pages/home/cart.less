@@ -112,9 +112,12 @@
 
     .showcartlist-enter-active, .showcartlist-leave-active {
         transform: translateZ(0);
+        opacity: 1;
     }
     .showcartlist-enter, .showcartlist-leave-active {
         transform: translate3d(0, 100% ,0);
+        opacity: 0;
+        transition: all .3s ease;
     }
 
     .mask-fade-enter-active, .mask-fade-leave-active {
