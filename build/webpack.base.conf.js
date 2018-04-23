@@ -39,7 +39,7 @@ module.exports = {
       '*': resolve('src/styles'),
       '@': resolve('src/components'),
       'fonts': resolve('src/assets/fonts'),
-      '^images': resolve('src/assets/images'),
+      'images': resolve('src/assets/images'),
       '*pages': resolve('src/styles/pages'),
       '*common': resolve('src/styles/common'),
       '^config': resolve('src/config')
