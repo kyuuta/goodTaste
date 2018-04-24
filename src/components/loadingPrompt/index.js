@@ -24,11 +24,8 @@ export default {
     close() {
         if(instance) {
             instance.visible = false;
-            setTimeout(()=> {
-                instance.$destroy();
-                document.body.removeChild(document.getElementsByClassName('ky-loading-prompt')[0]);
-                instance = null;
-            },500)
+            document.body.removeChild(document.getElementsByClassName('ky-loading-prompt')[0]);
+            instance = null;
         }
     }
 }
