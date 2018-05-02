@@ -29,7 +29,8 @@
         </transition>
         
         <div class="cartview-footer"
-             :class="{'cartview-footer-iphonex': this.$store.state.config.isPhoneX}" 
+             :class="{'cartview-footer-iphonex': this.$store.state.config.isPhoneX}"
+             :style="{'background-color': !visible ? 'rgba(61,61,63, .9)' : 'rgba(61,61,63,1)'}" 
              @click="changeCartListStatus">
             <div class="cart-icon"></div>
             <div class="info">
