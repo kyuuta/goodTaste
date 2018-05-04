@@ -1,9 +1,11 @@
 import 'normalize.css';					// resetCss
 import FastClick from 'fastclick';		// moblieEvent
 import network from './network';		// http
+import browser from './browser';		// browser
 
 window.GLOBAL = {
 	network,
+	browser,
 	init(){
 		// toMoblieEvent
 		if('addEventListener' in document) {

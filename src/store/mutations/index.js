@@ -54,6 +54,10 @@ export default {
     [IS_IPHONEX](state) {
         const w = window.screen.width * window.devicePixelRatio;
         const h = window.screen.height * window.devicePixelRatio;
-        w == 1125 && h == 2436 ? state.config.isPhoneX = true : state.config.isPhoneX = false;
+        (w == 1125 && h == 2436)
+            && !GLOBAL.browser.versions.qqBrowser
+            && !GLOBAL.browser.versions.uc
+                ? state.config.isPhoneX = true
+                : state.config.isPhoneX = false;
     }
 }

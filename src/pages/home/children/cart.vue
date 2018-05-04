@@ -5,6 +5,7 @@
                  v-show="visible"
                  @click="maskHandleClick"></div>
         </transition>
+
         <transition name="showcartlist">
             <section v-show="visible"
                      class="cartview-list"
@@ -37,11 +38,12 @@
                 <p>{{ cartList.length ? '已选菜 暂无价钱' : '请选菜'}}</p>
             </div>
             <div @click.stop="goPayment"
-                    :class="['balance-btn',
-                            !cartList.length ? 
-                            'balance-btn-disabled':
-                            this.$store.state.config.isPhoneX ? 'balance-btn-payment-iphonex' : 'balance-btn-payment']">去结算</div>
+                 :class="['balance-btn',
+                         !cartList.length ? 
+                         'balance-btn-disabled':
+                         this.$store.state.config.isPhoneX ? 'balance-btn-payment-iphonex' : 'balance-btn-payment']">去结算</div>
         </div>
+        
     </footer>
 </template>
 
