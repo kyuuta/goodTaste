@@ -1,0 +1,2 @@
+webpackJsonp([5],{"3reG":function(e,n,t){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var r={render:function(){var e=this.$createElement;return(this._self._c||e)("div",[this._v("\n    你想要的~东西啊~并不存在~\n")])},staticRenderFns:[]};var a=t("Z0/y")({name:"notFound",data:function(){return{}}},r,!1,function(e){t("Dfrx")},"data-v-0448a6e6",null);n.default=a.exports},Dfrx:function(e,n){}});
+//# sourceMappingURL=5.c99e14c6cf8f3f86c8d5.js.map
