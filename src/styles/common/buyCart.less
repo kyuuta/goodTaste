@@ -1,34 +1,45 @@
 @import '~*/mixin.less';
 
 .ky-buycart {
-    height: 15/@rem;
-    line-height: 15/@rem;
+    display: flex;
+    align-items: flex-end;
     white-space: nowrap;
     user-select: none;
     .minus-btn,
     .add-btn {
-        display: inline-block;
-        width: 15/@rem;
-        height: 15/@rem;
-        text-align: center;
-        line-height: 15/@rem;
-        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-direction: column;
+        width: 20/@rem;
+        height: 20/@rem;
+        i {
+            display: inline-block;
+            width: 15/@rem;
+            height: 15/@rem;
+            text-align: center;
+            border-radius: 50%;
+            line-height: 15/@rem;
+        }
     }
     .icon-minus,
     .icon-add {
         font-size: 12/@rem;
     }
-    .minus-btn {
+    .icon-minus {
         color: #da5e2e;
         box-shadow: inset 0px 0px 1px 0px #da5e2e;
     }
-    .add-btn {
+    .icon-add {
         color: #fff;
-        background: #da5e2e;
+        background-color: #da5e2e;
     }
     .count {
         display: inline-block;
+        height: 15/@rem;
         min-width: 15/@rem;
+        padding: 0 2/@rem;
+        line-height: 15/@rem;
         text-align: center;
         color: #666;
     }

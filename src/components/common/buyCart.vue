@@ -1,17 +1,17 @@
 <template>
     <section class="ky-buycart">
-        <transition name="showReduce">
-            <span v-if="foodNum"
-                  class="minus-btn" 
-                  @click="reduceToCart">
-                <i class="icon-minus"></i> 
-            </span>
-        </transition>
+        <span class="minus-btn" 
+                @click="reduceToCart">
+                <transition name="showReduce">
+                    <i v-if="foodNum" class="icon-minus"></i> 
+                </transition>
+        </span>
         
         <transition name="fade">
             <span v-if="foodNum" 
                   class="count">{{ foodNum }}</span>
         </transition>
+        
         <span class="add-btn" @click="addToCart">
             <i class="icon-add"></i> 
         </span>
@@ -43,18 +43,15 @@
                 return num;
             }
         },
-        data() {
-            return {
-            }
-        },
+        data: () => ({ }),
         methods: {
             ...mapMutations([
                 'ADD_CART',
                 'REDUCE_CART'
             ]),
-            addToCart() {
+            addToCart(e) {
                 this.ADD_CART(this.food);
-                // this.openFoodModal(this.food);
+                this.$eventHub.$emit('dropBall',e.target);
             },
             reduceToCart() {
                 this.REDUCE_CART(this.food.id);
