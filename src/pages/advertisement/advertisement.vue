@@ -34,13 +34,13 @@
                         this.skipTime--;
                     } else {
                         clearInterval(timer);
-                        this.$router.push('/home/index')
+                        this.$router.replace('/home/index')
                     }
                 }, 1000);
             },
             skip() {
                 this.skipTime = 0;
-                this.$router.push('/home/index')
+                this.$router.replace('/home/index')
             }
         }
     }

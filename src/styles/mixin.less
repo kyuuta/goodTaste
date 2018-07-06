@@ -31,30 +31,30 @@ html, body {
     padding-bottom: @bottom + 17/@rem;
 }
 
-
 .border-line() {
     position: relative;
-    &:after {
-        position: absolute;
-        left: 0;
-        bottom: -1px;
-        width: 100%;
+    &::after {
         border-bottom: 1px solid #eee;
-        content: '';
-        -webkit-transform-origin: 0 0;
-        transform-origin: 0 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        content: "";
+        display: block;
+        position: absolute;
+        transform-origin: 0 bottom;
     }
-    @media only screen and (-webkit-min-device-pixel-ratio: 2) {
-        &:after {
-            -webkit-transform: scaleY(0.5);
-            transform: scaleY(0.5);
+
+    @media (min-resolution: 2dppx) {
+        &::after {
+            width: 200%;
+            transform: scale(.5) translateZ(0);
         }
     }
-    @media only screen and (-webkit-min-device-pixel-ratio: 3) {
-        &:after {
-            -webkit-transform: scaleY(0.33);
-            transform: scaleY(0.33);
+
+     @media (min-resolution: 3dppx) {
+        &::after {
+            width: 300%;
+            transform: scale(.333) translateZ(0);
         }
     }
 }
-
