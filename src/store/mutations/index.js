@@ -52,6 +52,7 @@ export default {
         setStorage('buyCart', state.home.cartList);
     },
     [IS_IPHONEX](state) {
+        console.log('init is phonex')
         const w = window.screen.width * window.devicePixelRatio;
         const h = window.screen.height * window.devicePixelRatio;
         (w == 1125 && h == 2436)

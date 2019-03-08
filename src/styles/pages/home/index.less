@@ -54,10 +54,17 @@
                 }
             }
             .container {
+                position: relative;
                 flex: 1;
                 background: #fff;
                 .scroller {
                     padding-bottom: max(60/@rem, env(safe-area-inset-bottom));
+                }
+                .test {
+                    position: fixed;
+                    left: 0;
+                    top: 0;
+                    background: skyblue;
                 }
             }
         }

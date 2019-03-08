@@ -4,7 +4,7 @@
             <strong class="category-name">{{ menuData.name }}</strong>
             <span class="category-desc">{{ menuData.description }}</span>
         </dt>
-        <dd v-if="menuData.foods.length"
+        <dd v-show="menuData.foods && menuData.foods.length"
             v-for="food in menuData.foods"
             :key="food.id">
             <div class="foods">

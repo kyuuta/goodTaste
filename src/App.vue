@@ -9,15 +9,22 @@
 </template>
 
 <script>
+	import { mapMutations } from 'vuex';
+
 	export default {
 		name: "pageApp",
-		mounted() {
+		created() {
+			this.IS_IPHONEX();
 		},
-		data: () => ({
-			//  transitionName: 'slide-left'
-		}),
+		data() {
+			return {
+				
+			}
+		},
 		methods: {
-			
+			...mapMutations([
+                'IS_IPHONEX'
+            ]),
 		},
 		watch: {
 			// '$route'(to, from) {
