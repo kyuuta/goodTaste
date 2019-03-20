@@ -13,13 +13,13 @@
                 </div>
                 <section class="foods-info">
                     <p class="foods-info-name">{{ food.name }}</p>
-                    <p class="foods-info-desc">!songzongzhendeshuai === false....<p>
+                    <p class="foods-info-desc">{{ food.desc }}<p>
                     <p class="foods-info-sales">
                         <span>月售233份</span>
                         <span>好评率23.333%</span>
                     </p>
                     <strong class="foods-info-price">
-                        <span>23.33</span>
+                        <span>{{ food.price / 100 }}</span>
                     </strong>
                     <kyBuyCart class="buy-cart" :food="food"/>
                 </section>

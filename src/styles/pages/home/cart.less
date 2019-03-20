@@ -51,6 +51,24 @@
             }
         }
     }
+
+    .ball-container {
+        .ball {
+            position: fixed;
+            left: 24/@rem;
+            bottom: 18/@rem;
+            z-index: 200/@rem;
+            transition: all 0.4s cubic-bezier(0.49, -0.29, 0.75, 0.41);
+            .inner {
+                width: 14/@rem;
+                height: 14/@rem;
+                border-radius: 50%;
+                background: #da5e2e;
+                transition: all 0.4s linear;
+            }
+        }
+    }
+
     &-footer {
         display: flex;
         align-items: center;
@@ -70,8 +88,16 @@
             top: -10/@rem;
             height: 45/@rem;
             width: 45/@rem;
+            text-align: center;
+            line-height: 45/@rem;
             border-radius: 50%;
-            background: black;
+            background: #d74535;
+            box-shadow: inset 0px 0px 0px 3px rgba(61, 61, 63, 0.9);
+            .icon-cart {
+                color: #fff;
+                font-size: 20/@rem;
+                margin-left: -2/@rem;
+            }
         }
         .info {
             flex: 1;
