@@ -21,7 +21,7 @@
                         <li class="food" 
                             v-for="food in cartList"
                             :key="food.id">
-                            <span>{{ food.name }}</span>
+                            <span class="food-name">{{ food.name }}</span>
                             <kyBuyCart :food="food"/>
                         </li>
                     </ul>
